@@ -32,6 +32,7 @@ public class TestNGTodo1 {
         caps.setCapability("build", "TestNG With Java");
         caps.setCapability("name", m.getName() + " - " + this.getClass().getName());
         caps.setCapability("plugin", "git-testng");
+        caps.setCapability("tunnel", true);
 
         String[] Tags = new String[] { "Feature", "Falcon", "Severe" };
         caps.setCapability("tags", Tags);
@@ -45,7 +46,7 @@ public class TestNGTodo1 {
         String spanText;
         System.out.println("Loading Url");
 
-        driver.get("https://lambdatest.github.io/sample-todo-app/");
+        driver.get("http://localhost/todo.html");
 
         System.out.println("Checking Box");
         driver.findElement(By.name("li1")).click();
