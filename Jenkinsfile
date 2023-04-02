@@ -5,7 +5,7 @@ pipeline {
     stage('mvn clean install') {
       steps {
         // One or more steps need to be included within the steps block.
-        withMaven(maven: M3) {
+        withMaven(globalMavenSettingsConfig: 'null', maven: 'M3', mavenSettingsConfig: 'null') {
           // some block
 
           sh 'mvn clean install'
@@ -18,7 +18,7 @@ pipeline {
     stage('mvn test') {
       steps {
 
-        withMaven(globalMavenSettingsConfig: 'null', jdk: 'null', maven: 'M3', mavenSettingsConfig: 'null') {
+        withMaven(globalMavenSettingsConfig: 'null, maven: 'M3 ', mavenSettingsConfig: 'null ') {
 
           sh 'curl -O https://downloads.lambdatest.com/tunnel/v3/mac/64bit/LT_Mac.zip'
           sh 'unzip LT_MAC.zip'
