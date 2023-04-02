@@ -18,7 +18,7 @@ pipeline {
     stage('mvn test') {
       steps {
 
-        withMaven(maven: 'M3 ') {
+        withMaven(maven: 'M3') {
 
           sh 'curl -O https://downloads.lambdatest.com/tunnel/v3/mac/64bit/LT_Mac.zip'
           sh 'unzip LT_MAC.zip'
